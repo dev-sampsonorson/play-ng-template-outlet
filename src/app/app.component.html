@@ -1,2 +1,7 @@
 <h1>Home</h1>
 <so-basic></so-basic>
+<so-list [optionTemplate]="optionTemplate">
+  <ng-template #optionTemplate let-option>
+    > {{ option.label }}
+  </ng-template>
+</so-list>

@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let option of options">
+    <ng-template #defaultTemplate let-option>
+      {{ option.label }}
+    </ng-template>
+    <ng-container [ngTemplateOutlet]="optionTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: option }"></ng-container>
+  </li>
+</ul>
