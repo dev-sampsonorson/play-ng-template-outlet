@@ -8,13 +8,20 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": true
+          "standalone": true,
+          "changeDetection": "OnPush",
+          "prefix": "so",
+          "displayBlock": true,
+          "skipTests": true
         },
         "@schematics/angular:directive": {
-          "standalone": true
+          "standalone": true,
+          "prefix": "so",
+          "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "standalone": true
+          "standalone": true,
+          "skipTests": true
         }
       },
       "root": "",
