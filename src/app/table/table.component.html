@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr *ngIf="withHeaders(); else defaultHeadersTemplate">
+      <ng-container *ngFor="let header of headers | keyvalue">
+        <th *ngIf="isCellVisible(header.key)" [innerText]="header.value"></th>
+      </ng-container>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let row of data">
+    <ng-container *ngFor="let cell of row | keyvalue">
+      <td *ngIf="isCellVisible(cell.key)" [innerText]="cell.value"></td>
+    </ng-container>
+    <td>
+      <ng-container *ngFor="let action of actions">
+        <button (click)="onActionClick(action, row)">{{ action.label }}</button>
+      </ng-container>
+    </td>
+  </tr>
+</table>
+<ng-template #defaultHeadersTemplate>
+  <ng-container *ngIf="withData()">
+    <th *ngFor="let item of data[0] | keyvalue" [innerText]="item.key"></th>
+    <th>Actions</th>
+  </ng-container>
+</ng-template>

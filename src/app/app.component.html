@@ -5,3 +5,6 @@
     > {{ option.label }}
   </ng-template>
 </so-list>
+<so-table [data]="employees" [actions]="actions"></so-table>
+<so-table [data]="employees" [headers]="headers"></so-table>
+<!-- <so-table [data]="employees" [headers]="['FirstName', 'LastName']" [hiddenColums]="['firstName']"></so-table> -->
